@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form action={{url_for('update')}} method="POST">
+    Id<br>
+    <input type="text" name="id"/><br>
+    What do you want to update?<br>
+    <input type="text" name="key_to_update"/><br>
+    Wha do you want to update it with?<br>
+    <input type="text" name="new"><br>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

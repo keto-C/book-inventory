@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Delete Object</h1>
+    <label for="id_input">Enter ID of object to delete:</label>
+    <input type="text" id="id_input">
+    <button onclick="deleteObject()">Delete</button>
+
+    <script>
+        function deleteObject() {
+            var id = document.getElementById("id_input").value;
+            fetch('/books/delete/' + id, {
+                method: 'DELETE'
+            }).then(response => response.json()).then(data => {
+                if (data.error) {
+                    alert(data.error); // Handle error response
+                } else {
+                    alert(return data.message); // Handle success response
+                }})
+
+        }
+    </script>
+</body>
+</html>
